@@ -4,16 +4,13 @@ def add(a, b):
     """Сложение двух чисел"""
     return a + b
 
-
 def subtract(a, b):
     """Вычитание двух чисел"""
     return a - b
 
-
 def multiply(a, b):
     """Умножение двух чисел"""
     return a * b
-
 
 def divide(a, b):
     """Деление двух чисел"""
@@ -60,7 +57,7 @@ def get_number(prompt):
         try:
             return float(input(prompt))
         except ValueError:
-            print("Ошибка: введите корректное число!")
+            print("У вас ошибка: введите корректное число!!!!!!")
 
 def main():
     print("Добро пожаловать в продвинутый калькулятор!")
@@ -107,8 +104,8 @@ def main():
         else:
             print("Неверный выбор! Попробуйте снова.")
 
-    except Exception as e:
-        print(f"Произошла ошибка: {e}")
+    except Exception as error:
+        print(f"Произошла ошибка: {error}")
 
 if __name__ == "__main__":
     main()
