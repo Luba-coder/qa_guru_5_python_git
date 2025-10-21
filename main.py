@@ -1,7 +1,7 @@
 import math
 
 def add(a, b):
-    """Сложение двух чисел"""
+    """Сложение двух чисел q и r"""
     return a + b
 
 def subtract(a, b):
