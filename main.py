@@ -1,3 +1,5 @@
+import math
+
 def add(a, b):
     """Сложение двух чисел"""
     return a + b
@@ -19,6 +21,46 @@ def divide(a, b):
         return "Ошибка: деление на ноль!"
     return a / b
 
+def power(a, b):
+    """Возведение в степень"""
+    return a ** b
+
+def square_root(a):
+    """Квадратный корень"""
+    if a < 0:
+        return "Ошибка: корень из отрицательного числа!"
+    return math.sqrt(a)
+
+def factorial(a):
+    """Факториал числа"""
+    if a < 0:
+        return "Ошибка: факториал отрицательного числа!"
+    if a == 0:
+        return 1
+    return math.factorial(int(a))
+
+def display_menu():
+    """Отображение меню операций"""
+    print("\n" + "="*40)
+    print("           ПРОДВИНУТЫЙ КАЛЬКУЛЯТОР")
+    print("="*40)
+    print("1. Сложение (+)")
+    print("2. Вычитание (-)")
+    print("3. Умножение (*)")
+    print("4. Деление (/)")
+    print("5. Возведение в степень (^)")
+    print("6. Квадратный корень (√)")
+    print("7. Факториал (!)")
+    print("8. Выход")
+    print("="*40)
+
+def get_number(prompt):
+    """Безопасный ввод числа"""
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print("Ошибка: введите корректное число!")
 
 def main():
     print("Простой калькулятор")
