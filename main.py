@@ -63,32 +63,52 @@ def get_number(prompt):
             print("Ошибка: введите корректное число!")
 
 def main():
-    print("Простой калькулятор")
-    print("Доступные операции: +, -, *, /")
+    print("Добро пожаловать в продвинутый калькулятор!")
+
+    while True:
+        display_menu()
+        choice = input("\nВыберите операцию (1-8): ")
+
+        if choice == '8':
+            print("До свидания!")
+            break
 
     try:
-        num1 = float(input("Введите первое число: "))
-        operator = input("Введите оператор (+, -, *, /): ")
-        num2 = float(input("Введите второе число: "))
+        if choice in ['1', '2', '3', '4', '5']:
+            num1 = get_number("Введите первое число: ")
+            num2 = get_number("Введите второе число: ")
 
-        if operator == '+':
-            result = add(num1, num2)
-        elif operator == '-':
-            result = subtract(num1, num2)
-        elif operator == '*':
-            result = multiply(num1, num2)
-        elif operator == '/':
-            result = divide(num1, num2)
+            if choice == '1':
+                result = add(num1, num2)
+                print(f"{num1} + {num2} = {result}")
+            elif choice == '2':
+                result = subtract(num1, num2)
+                print(f"{num1} - {num2} = {result}")
+            elif choice == '3':
+                result = multiply(num1, num2)
+                print(f"{num1} * {num2} = {result}")
+            elif choice == '4':
+                result = divide(num1, num2)
+                print(f"{num1} / {num2} = {result}")
+            elif choice == '5':
+                result = power(num1, num2)
+                print(f"{num1} ^ {num2} = {result}")
+
+        elif choice == '6':
+            num = get_number("Введите число: ")
+            result = square_root(num)
+            print(f"√{num} = {result}")
+
+        elif choice == '7':
+            num = get_number("Введите число: ")
+            result = factorial(num)
+            print(f"{num}! = {result}")
+
         else:
-            result = "Неверный оператор"
+            print("Неверный выбор! Попробуйте снова.")
 
-        print(f"Результат: {result}")
-
-    except ValueError:
-        print("Ошибка: введите числа корректно")
     except Exception as e:
         print(f"Произошла ошибка: {e}")
-
 
 if __name__ == "__main__":
     main()
